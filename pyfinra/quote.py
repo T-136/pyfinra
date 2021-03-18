@@ -39,7 +39,6 @@ def quote(search):
            "P/B": data["st408"],
            "P/CF": data["st410"]   
   }
-  
 
 
 # symbols = symbols.sp500()
