@@ -1,7 +1,7 @@
 import requests
 import json
-import cookieGetter
-import symbols
+from . import cookieGetter
+from . import symbols
 
 cookies = cookieGetter.get() 
 

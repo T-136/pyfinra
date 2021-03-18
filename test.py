@@ -1,2 +1,7 @@
+from PyFinra import Ticker
 
-quote.quote("GME")
+gme = Ticker("GME")
+tsla = Ticker("TSLA")
+
+
+print(gme.quote(), tsla.quote())
