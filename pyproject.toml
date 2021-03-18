@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyfinra"
-version = "0.1.2"
+version = "0.1.3"
 description = ""
 authors = ["Sören Michaels <soeren.michaels@gmail.com>"]
 readme = "README.md"
