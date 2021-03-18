@@ -1,24 +1,15 @@
 import requests
-import selenium.webdriver
 import json
+import cookieGetter
+import symbols
 
-
-from selenium.webdriver.chrome.options import Options
-
-chrome_options = Options()
-chrome_options.add_argument("--headless")
-chrome_options.add_argument("--disable-gpu")
-driver = selenium.webdriver.Chrome(options=chrome_options)
-
-
-driver.get("http://finra-markets.morningstar.com")
-cookies = driver.get_cookies()
-driver.close()
+cookies = cookieGetter.get() 
 
 s = requests.Session()
 for cookie in cookies:
   s.cookies.set(cookie['name'], cookie['value'])
-def search_kgv(search):
+
+def quote(search):
   url = f"http://finra-markets.morningstar.com/acb.jsp?&condition=ST,FE,FC,FO,2,1,7&acbinstid=FINRA&kw={search}"
   response = s.get( url )
   symbols = json.loads(response.text)
@@ -51,18 +42,20 @@ def search_kgv(search):
   
 
 
-from finsymbols import symbols
-symbols = symbols.get_sp500_symbols()
+# symbols = symbols.sp500()
 
-kgvdict = {}
-for symbol in symbols:
-    symbol = symbol["symbol"].strip()
-    try:
-        kgv = search_kgv(symbol)
-        kgvdict[symbol] = kgv
-    except:
-        kgv = None
-    print(symbol, ":",  kgv)
+# kgvdict = {}
+# for symbol in symbols:
+#     symbol = symbol["symbol"].strip()
+#     try:
+#         kgv = search_kgv(symbol)
+#         kgvdict[symbol] = kgv
+#     except:
+#         kgv = None
+#     print(symbol, ":",  kgv)
 
-with open('kgbsp500.json', 'w') as fp:
-    json.dump(kgvdict, fp, sort_keys=True, indent=4)
+# with open('kgbsp500.json', 'w') as fp:
+#     json.dump(kgvdict, fp, sort_keys=True, indent=4)
+
+
+
