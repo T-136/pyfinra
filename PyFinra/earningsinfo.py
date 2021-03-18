@@ -20,14 +20,10 @@ response = requests.request("GET", url, headers=headers, data=payload)
 
 df_test = pd.read_csv(io.StringIO(response.text), header=1)
 
-# indexcol = df_test["Fiscal year ends in December. USD in millions except per share data."].to_list()
-# print(indexcol)
-df = pd.read_csv(io.StringIO(response.text), header=1)
-df.reindex("Fiscal year ends in December. USD in millions except per share data.")
+df = df_test.set_index(
+    "Fiscal year ends in December. USD in millions except per share data.")
+
 print(df)
-# print(pd.DataFrame.to_json(df))
-# print(df)
-# print(df.to_dict())
 
 
 # '''kurzfassung'''
