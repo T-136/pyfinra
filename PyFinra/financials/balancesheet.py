@@ -16,8 +16,10 @@ headers = {
   'Upgrade-Insecure-Requests': '1'
 }
 
-response = requests.request("GET", url, headers=headers, data=payload)
 
+
+response = requests.request("GET", url, headers=headers, data=payload)
+print(response.text)
 df_test = pd.read_csv(io.StringIO(response.text), header=1)
 print(df_test)
 df = df_test.set_index("Fiscal year ends in January. USD in millions except per share data.")
