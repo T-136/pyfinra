@@ -37,7 +37,8 @@ def quote(search):
            "currency": data["S9"],
            "P/S": data["st415"],
            "P/B": data["st408"],
-           "P/CF": data["st410"]   
+           "P/CF": data["st410"],
+           ""   
   }
 
 
