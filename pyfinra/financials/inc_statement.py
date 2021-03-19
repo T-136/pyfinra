@@ -26,4 +26,3 @@ def inc_statement(ticker, exchange):
     return df
 
 
-print(inc_statement("gme"))
