@@ -14,7 +14,7 @@ def inc_statement(ticker, exchange):
         'Referer': 'http://financials.morningstar.com/',
         'Upgrade-Insecure-Requests': '1'
     }
-
+    
     response = requests.request("GET", url, headers=headers, data=payload)
 
     df_test = pd.read_csv(io.StringIO(response.text), header=1)
