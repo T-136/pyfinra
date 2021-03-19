@@ -3,7 +3,7 @@ import pandas as pd
 import io
 
 def cash_flow(ticker, exchange, period):
-    url = f"http://financials.morningstar.com/ajax/ReportProcess4CSV.html?&t={exchange}:{ticker}&region=usa&culture=en-US&productcode=QS&version=2&cur=&client=FINRA&reportType=cf&period={periond}&dataType=A&order=asc&columnYear=5&curYearPart=1st5year&rounding=3&view=raw&r=926912&denominatorView=raw&number=3"
+    url = f"http://financials.morningstar.com/ajax/ReportProcess4CSV.html?&t={exchange}:{ticker}&region=usa&culture=en-US&productcode=QS&version=2&cur=&client=FINRA&reportType=cf&period={period}&dataType=A&order=asc&columnYear=5&curYearPart=1st5year&rounding=3&view=raw&r=926912&denominatorView=raw&number=3"
 
     payload={}
     headers = {
@@ -25,7 +25,7 @@ def cash_flow(ticker, exchange, period):
     return df
 
 
-print(cash_flow("TSLA", "XNAS"))
+print(cash_flow("TSLA", "XNAS","12"))
 
 
 import requests
