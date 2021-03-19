@@ -1,6 +1,6 @@
 import requests
 import json
-from . import cookieGetter
+from .tools import cookieGetter
 from . import symbols
 
 cookies = cookieGetter.get() 
