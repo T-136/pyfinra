@@ -7,10 +7,19 @@ class Ticker:
         self.ticker = ticker
     
     def quote(self):
-        return quote.quote(self.ticker)
+        try:
+            return quote.quote(self.ticker)
+        except:
+            return quote.quote(self.ticker)
 
     def financials_balancesheet(self):
-        return balance_sheet.balance_sheet(self.ticker,self.quote()["exchange"],cookieGetter.getRequestsCookies)
-    
+        try:
+            return balance_sheet.balance_sheet(self.ticker,self.quote()["exchange"],cookieGetter.getRequestsCookies)
+        except:
+            return balance_sheet.balance_sheet(self.ticker,self.quote()["exchange"],cookieGetter.getRequestsCookies)
+
     def financials_inc_statement(self):
-        return inc_statement.inc_statement(self.ticker,self.quote()["exchange"])
+        try:
+            return inc_statement.inc_statement(self.ticker,self.quote()["exchange"])
+        except:
+            return inc_statement.inc_statement(self.ticker,self.quote()["exchange"])
