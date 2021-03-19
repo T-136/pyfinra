@@ -1,9 +1,9 @@
 import requests
 import pandas as pd
 import io
-from ..PyFinra.tools import cookieGetter
 
-def balance_sheet(ticker, exchange):
+
+def balance_sheet(ticker, exchange, cookies):
   url = f"http://financials.morningstar.com/ajax/ReportProcess4CSV.html?&t={exchange}:{ticker}&region=usa&culture=en-US&productcode=QS&version=2&cur=&client=FINRA&reportType=bs&period=12&dataType=A&order=asc&columnYear=5&curYearPart=1st5year&rounding=3&view=raw&r=482757&denominatorView=raw&number=3"
 
   payload={}
@@ -19,7 +19,7 @@ def balance_sheet(ticker, exchange):
 
 
 
-  response = requests.request("GET", url, headers=headers, data=payload, cookies=cookieGetter.get())
+  response = requests.request("GET", url, headers=headers, data=payload, cookies=cookies())
   print(response.text)
   df_test = pd.read_csv(io.StringIO(response.text), header=1)
   print(df_test)
