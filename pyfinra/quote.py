@@ -38,7 +38,7 @@ def quote(search):
            "P/S": data["st415"],
            "P/B": data["st408"],
            "P/CF": data["st410"],
-           ""   
+           "exchange": data["S676"]   
   }
 
 
