@@ -3,7 +3,7 @@ import pandas as pd
 import io
 
 
-url = "http://financials.morningstar.com/ajax/ReportProcess4CSV.html?&t=XNYS:GME&region=usa&culture=en-US&productcode=QS&version=2&cur=&urlCookie=eyJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.N3hm2DVlYvpwqO43X5_6-jOiVI0kTw7Pq013hN-OiiGKA_UdzAzMWgGMUfKXDpt7oLxD4bOTUCKZnTV2XMufWMFwPdVUP59zqAokMUHTxtK8h58gp_ah42Gq2V9cjIWG11gz3YeNuIiUwKd5q7-Vuv29axXN8vc1X7YXUsZwcb0.xF0poAf1Np0r0ZNp.At_xMn9G34-HeHoN8Je7wSu5wOoVUT8UqB92eqRnyHUEqvz-TKnjvIPZeQvF4AYZvTMpgXV1je4Bbbwsg9EQSyDroguYvpR46oL3sRXq6T37lNxZ62O5rY15b2dcGdC_n7QeskpoewoRH4wuYmJ6caQI1_Kaa4X2sWaovFnpZcAEF_p_1bIr4oZVRibzXadDTvUH1i9OWEmv74WpWWwR2XXhog.U87bBGgVyZ_IJcxxfGdCNw&client=FINRA&reportType=bs&period=12&dataType=A&order=asc&columnYear=5&curYearPart=1st5year&rounding=3&view=raw&r=482757&denominatorView=raw&number=3"
+url = "http://financials.morningstar.com/ajax/ReportProcess4CSV.html?&t=XNYS:GME&region=usa&culture=en-US&productcode=QS&version=2&cur=&client=FINRA&reportType=bs&period=12&dataType=A&order=asc&columnYear=5&curYearPart=1st5year&rounding=3&view=raw&r=482757&denominatorView=raw&number=3"
 
 payload={}
 headers = {
