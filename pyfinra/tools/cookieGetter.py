@@ -13,3 +13,9 @@ def get():
     cookies = driver.get_cookies()
     driver.close()
     return cookies
+
+
+def getRequestsCookies():
+    d = get()
+    c = {c['name']:c['value'] for c in d}
+    return c

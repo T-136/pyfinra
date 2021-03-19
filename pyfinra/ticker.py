@@ -10,7 +10,7 @@ class Ticker:
         return quote.quote(self.ticker)
 
     def financials_balancesheet(self):
-        return balance_sheet.balance_sheet(self.ticker,self.quote()["exchange"],cookieGetter.get)
+        return balance_sheet.balance_sheet(self.ticker,self.quote()["exchange"],cookieGetter.getRequestsCookies)
     
     def financials_inc_statement(self):
         return inc_statement.inc_statement(self.ticker,self.quote()["exchange"])
