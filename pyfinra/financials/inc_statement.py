@@ -3,8 +3,14 @@ import pandas as pd
 import io
 
 
-def inc_statement(ticker, exchange):
-    url = f"http://financials.morningstar.com/ajax/ReportProcess4CSV.html?&t={exchange}:{ticker}&client=FINRA&reportType=is&period=12&dataType=A&order=asc&columnYear=5&curYearPart=1st5year&rounding=3&view=raw&r=240015&denominatorView=raw&number=3"
+def inc_statement(ticker, exchange, annualy:bool=False):
+
+    if annualy:
+        period = "12"
+    else: 
+        period = "3"
+
+    url = f"http://financials.morningstar.com/ajax/ReportProcess4CSV.html?&t={exchange}:{ticker}&client=FINRA&reportType=is&period={period}&dataType=A&order=asc&columnYear=5&curYearPart=1st5year&rounding=3&view=raw&r=240015&denominatorView=raw&number=3"
     payload = {}
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0',
