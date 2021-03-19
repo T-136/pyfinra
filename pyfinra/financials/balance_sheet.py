@@ -3,8 +3,14 @@ import pandas as pd
 import io
 
 
-def balance_sheet(ticker, exchange, cookies):
-  url = f"http://financials.morningstar.com/ajax/ReportProcess4CSV.html?&t={exchange}:{ticker}&region=usa&culture=en-US&productcode=QS&version=2&cur=&client=FINRA&reportType=bs&period=12&dataType=A&order=asc&columnYear=5&curYearPart=1st5year&rounding=3&view=raw&r=482757&denominatorView=raw&number=3"
+def balance_sheet(ticker, exchange, annualy:bool=False):
+
+  if annualy:
+    period = "12"
+  else:
+    period = "3"
+  
+  url = f"http://financials.morningstar.com/ajax/ReportProcess4CSV.html?&t={exchange}:{ticker}&region=usa&culture=en-US&productcode=QS&version=2&cur=&client=FINRA&reportType=bs&period={period}&dataType=A&order=asc&columnYear=5&curYearPart=1st5year&rounding=3&view=raw&r=482757&denominatorView=raw&number=3"
 
   payload={}
   headers = {
@@ -26,5 +32,6 @@ def balance_sheet(ticker, exchange, cookies):
   # df = df_test.set_index("Fiscal year ends in January. USD in millions except per share data.")
   df = df_test.set_index(list(df_test.columns[[0]]))
   
-
-  print(df) 
+  return df
+  
+print(balance_sheet("gme","nyse"))
