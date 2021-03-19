@@ -21,7 +21,6 @@ def cash_flow(ticker, exchange, annualy:bool=False):
   }
 
   response = requests.request("GET", url, headers=headers, data=payload)
-  print(response.text)
   df_test = pd.read_csv(io.StringIO(response.text), header=1)
 
   df = df_test.set_index(list(df_test.columns[[0]]))
@@ -29,6 +28,5 @@ def cash_flow(ticker, exchange, annualy:bool=False):
   return df
 
 
-print(cash_flow("TSLA", "XNAS"))
 
 

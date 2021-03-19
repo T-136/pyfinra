@@ -26,9 +26,7 @@ def balance_sheet(ticker, exchange, annualy:bool=False):
 
 
   response = requests.request("GET", url, headers=headers, data=payload)
-  print(response.text)
   df_test = pd.read_csv(io.StringIO(response.text), header=1)
-  print(df_test)
   # df = df_test.set_index("Fiscal year ends in January. USD in millions except per share data.")
   df = df_test.set_index(list(df_test.columns[[0]]))
   
