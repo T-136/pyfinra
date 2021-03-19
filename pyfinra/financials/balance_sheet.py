@@ -34,4 +34,4 @@ def balance_sheet(ticker, exchange, annualy:bool=False):
   
   return df
   
-print(balance_sheet(gme,nyse))
+print(balance_sheet("gme","nyse"))
