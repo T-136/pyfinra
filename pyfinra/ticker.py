@@ -10,3 +10,6 @@ class Ticker:
 
     def financials_balancesheet(self):
         return balance_sheet.balance_sheet(self.ticker,self.quote()["exchange"])
+    
+    def financials_inc_statement(self):
+        return inc_statement.inc_statement(self.ticker,self.quote()["exchange"])
