@@ -25,7 +25,7 @@ def balance_sheet(ticker, exchange, annualy:bool=False):
 
 
 
-  response = requests.request("GET", url, headers=headers, data=payload, cookies=cookies())
+  response = requests.request("GET", url, headers=headers, data=payload)
   print(response.text)
   df_test = pd.read_csv(io.StringIO(response.text), header=1)
   print(df_test)
