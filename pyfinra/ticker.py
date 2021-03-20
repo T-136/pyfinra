@@ -12,9 +12,9 @@ class Ticker:
         except:
             return quote.quote(self.ticker)
 
-    def financials_balancesheet(self, annualy=False):
+    def financials_balancesheet(self, annualy=False,exchange=self.quote()["exchange"] ):
         try:
-            return balance_sheet.balance_sheet(self.ticker,self.quote()["exchange"],cookieGetter.getRequestsCookies)
+            return balance_sheet.balance_sheet(self.ticker,exchange,cookieGetter.getRequestsCookies)
         except:
             return balance_sheet.balance_sheet(self.ticker,self.quote()["exchange"],cookieGetter.getRequestsCookies)
 
