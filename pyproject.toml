@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyfinra"
-version = "0.1.4"
+version = "0.1.7"
 description = "Unoffical Python Finra Wrapper"
 authors = ["Sören Michaels <soeren.michaels@gmail.com>", "Tilman Grüger"]
 readme = "README.md"
