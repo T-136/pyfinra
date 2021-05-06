@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "pyfinra"
+version = "0.1.8"
+description = "Unoffical Python Finra Wrapper"
+authors = ["Sören Michaels <soeren.michaels@gmail.com>", "Tilman Grüger"]
+readme = "README.md"
+homepage = "https://github.com/BluhbergTerminal/PyFinra/tree/alpha"
+repository = "https://github.com/BluhbergTerminal/PyFinra/tree/alpha"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.25.1"
+pandas = "^1.2.3"
+finsymbols = "^1.3.0"
+selenium = "^3.141.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.2"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
