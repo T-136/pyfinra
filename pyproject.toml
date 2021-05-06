@@ -1,11 +1,11 @@
 [tool.poetry]
 name = "pyfinra"
-version = "0.1.8"
+version = "0.1.10"
 description = "Unoffical Python Finra Wrapper"
 authors = ["Sören Michaels <soeren.michaels@gmail.com>", "Tilman Grüger"]
 readme = "README.md"
-homepage = "https://github.com/BluhbergTerminal/PyFinra/tree/alpha"
-repository = "https://github.com/BluhbergTerminal/PyFinra/tree/alpha"
+homepage = "https://github.com/msw-projects/pyfinra"
+repository = "https://github.com/msw-projects/pyfinra"
 
 [tool.poetry.dependencies]
 python = "^3.9"

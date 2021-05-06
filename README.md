@@ -263,5 +263,5 @@ print(gme.financials_cash_flow(True))
 Not implemented Yet!
 
 ```Bash
-petry run pytest
+poetry run pytest
 ```
