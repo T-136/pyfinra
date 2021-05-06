@@ -1,9 +1,10 @@
 # Unoffical Python Finra Wrapper
 
-**warning this repository is still in alpha stage** 
+**warning this repository is still in alpha stage**
 
 ## Requirements
-- Chromium 
+
+- Chromium
 - Chromedriver
 
 ## Installation
@@ -21,19 +22,26 @@ poetry install
 poetry build
 ```
 
-## Example 
+## Example
 
 ```Python
-from PyFinra import Ticker
-
-gme = Ticker("GME")
-tsla = Ticker("TSLA")
+from pyfinra import Ticker
 
 
-print(gme.quote(), tsla.quote())
+gme = Ticker("Gme")
+print(gme.quote())
+print(gme.financials_balancesheet())
+print(gme.financials_inc_statement())
+print(gme.financials_cash_flow())
+print(gme.financials_balancesheet(True))
+print(gme.financials_inc_statement(True))
+print(gme.financials_cash_flow(True))
+
 ```
 
 ## Testing
+
+Not implemented Yet!
 
 ```Bash
 petry run pytest
