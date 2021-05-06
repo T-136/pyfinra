@@ -1,6 +1,6 @@
 # Unoffical Python Finra Wrapper
 
-**warning this repository is still in alpha stage**
+**warning: this repository is still in alpha stage**
 
 ## Requirements
 
