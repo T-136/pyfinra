@@ -1,6 +1,6 @@
-from . import quote
-from .financials import balance_sheet, inc_statement, cash_flow
-from .tools import cookieGetter
+from financials import quote
+from financials import financialStatements
+
 
 
 class Ticker:
@@ -13,20 +13,26 @@ class Ticker:
         except:
             return quote.quote(self.ticker)
 
-    def financials_balancesheet(self, annualy=False):
+    def financials_balancesheet(self, annualy=False, restatedData=False):
         try:
-            return balance_sheet.balance_sheet(self.ticker, self.quote()["exchange"], cookieGetter.getRequestsCookies)
+            return financialStatements.balance_sheet(self.ticker, annualy, restatedData)
         except:
-            return balance_sheet.balance_sheet(self.ticker, self.quote()["exchange"], cookieGetter.getRequestsCookies)
+            return financialStatements.balance_sheet(self.ticker, annualy, restatedData)
 
-    def financials_inc_statement(self, annualy=False):
+    def financials_inc_statement(self, annualy=False, restatedData= False):
         try:
-            return inc_statement.inc_statement(self.ticker, self.quote()["exchange"])
+            return financialStatements.inc_statement(self.ticker, annualy, restatedData)
         except:
-            return inc_statement.inc_statement(self.ticker, self.quote()["exchange"])
+            return financialStatements.inc_statement(self.ticker, annualy, restatedData)
 
-    def financials_cash_flow(self, annualy=False):
+    def financials_cash_flow(self, annualy=False, restatedData=False):
         try:
-            return cash_flow.cash_flow(self.ticker, self.quote()["exchange"])
+            return financialStatements.cash_flow(self.ticker, annualy, restatedData)
         except:
-            return cash_flow.cash_flow(self.ticker, self.quote()["exchange"])
+            return financialStatements.cash_flow(self.ticker, annualy, restatedData)
+
+
+if __name__ =="__main__":
+    aapl = Ticker("msft")
+    print(aapl.financials_inc_statement())
+

@@ -1,14 +1,19 @@
 from pyfinra import Ticker
+import yfinance as fy
+import json
 
-
-gme = Ticker("Gme")
+gme = Ticker("aapl")
 print(gme.quote())
-print(gme.financials_balancesheet())
-print(gme.financials_inc_statement())
-print(gme.financials_cash_flow())
-print(gme.financials_balancesheet(True))
-print(gme.financials_inc_statement(True))
-print(gme.financials_cash_flow(True))
+# print(gme.financials_balancesheet(), indent=4, sort_keys=True)
+# print(gme.financials_inc_statement())
+# print(gme.financials_cash_flow())
+# print(gme.financials_balancesheet(True))
+# print(gme.financials_inc_statement(True))
+# print(gme.financials_cash_flow(True))
+
+
+# apple = fy.Ticker("aapl")
+# print(apple.balance_sheet)
 
 # {'P/E': '-103.0928', 'market_cap': '11286683155', 'shares': '70771778', 'short_interest': '27.2334', 'currency': 'USD', 'P/S': '2.036662', 'P/B': '25.845393', 'P/CF': '83.801132', 'exchange': 'XNYS'}
 #                                                     2017-01  2018-01  2019-01  2020-01  2021-01
