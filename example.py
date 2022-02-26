@@ -1,3 +1,4 @@
+
 from pyfinra.ticker import Ticker
 
 aapl = Ticker("aapl")
