@@ -12,8 +12,7 @@ def getFinraStockID(ticker):
   cookies = cookieGetter.get() 
 
   s = requests.Session()
-  for cookie in cookies:
-    s.cookies.set(cookie['name'], cookie['value'])
+  s.cookies = cookies
   
   print(s.cookies)
 

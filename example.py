@@ -1,6 +1,5 @@
+
 from pyfinra.ticker import Ticker
-import yfinance as fy
-import json
 
 aapl = Ticker("aapl")
 print(aapl.quote())

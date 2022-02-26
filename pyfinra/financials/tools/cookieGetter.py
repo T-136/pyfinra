@@ -1,21 +1,21 @@
-import selenium.webdriver
+import requests
 
-
-from selenium.webdriver.chrome.options import Options
 def get():
-    chrome_options = Options()
-    chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--disable-gpu")
-    driver = selenium.webdriver.Chrome(options=chrome_options)
+    headers = {
+        'Content-Type': 'application/x-www-form-urlencoded',
+    }
 
+    data = {
+        'redirectPage': '/MarketData/EquityOptions/detail.jsp',
+        'sdkVersion': '2.62.0'
+    }
 
-    driver.get("http://finra-markets.morningstar.com")
-    cookies = driver.get_cookies()
-    driver.close()
-    return cookies
+    a_session = requests.Session()
+    a_session.post(
+        'https://finra-markets.morningstar.com/finralogin.jsp', headers=headers, data=data)
+    session_cookies = a_session.cookies
+    cookies_dictionary = session_cookies
 
+    print(cookies_dictionary)
+    return cookies_dictionary
 
-def getRequestsCookies():
-    d = get()
-    c = {c['name']:c['value'] for c in d}
-    return c
