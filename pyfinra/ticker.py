@@ -1,5 +1,6 @@
-from financials import quote
-from financials import financialStatements
+from .financials import quote
+from .financials import financialStatements
+
 
 
 
@@ -31,8 +32,10 @@ class Ticker:
         except:
             return financialStatements.cash_flow(self.ticker, annualy, restatedData)
 
-
 if __name__ =="__main__":
-    aapl = Ticker("msft")
+    aapl = Ticker("aapl")
+    print(aapl.quote())
+    print(aapl.financials_balancesheet())
     print(aapl.financials_inc_statement())
+    print(aapl.financials_cash_flow())
 

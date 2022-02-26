@@ -1,6 +1,6 @@
 import requests
 import json
-from pyfinra.tools import cookieGetter
+from . import cookieGetter
 
 
 
@@ -14,6 +14,8 @@ def getFinraStockID(ticker):
   s = requests.Session()
   for cookie in cookies:
     s.cookies.set(cookie['name'], cookie['value'])
+  
+  print(s.cookies)
 
   url = f"http://finra-markets.morningstar.com/acb.jsp?&condition=ST,FE,FC,FO,2,1,7&acbinstid=FINRA&kw={ticker}"
   response = s.get( url )

@@ -15,6 +15,6 @@ def quote(ticker):
 
   response = requests.request("GET", url, headers=headers, data=payload)
 
-  print(response.text)
+  return response.text
 
 
