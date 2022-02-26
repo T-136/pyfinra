@@ -34,6 +34,7 @@ def getTokens():
     response = requests.post(
         'https://finra-markets.morningstar.com/finralogin.jsp', headers=headers, data=data)
 
+    print(response.cookies)
 
     dictionary = {}
     for key in TOKEN_KEYS:

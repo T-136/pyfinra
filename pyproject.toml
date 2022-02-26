@@ -3,6 +3,9 @@ name = "pyfinra"
 version = "0.2.0"
 description = "unofficial Finra api"
 authors = ["T-136"]
+readme = "README.md"
+homepage = "https://github.com/msw-projects/pyfinra"
+repository = "https://github.com/msw-projects/pyfinra"
 
 [tool.poetry.dependencies]
 python = "^3.10"

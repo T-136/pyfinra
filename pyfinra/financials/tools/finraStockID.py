@@ -4,9 +4,6 @@ from . import cookieGetter
 
 
 
-
-
-
 def getFinraStockID(ticker):
 
   cookies = cookieGetter.get() 

@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 import io
 import json
-from .tools.get_acces import getTokens
+from .tools.get_access import getTokens
 from .finStatementsDictToDf import finStatementsDictToDf
 
 
@@ -37,14 +37,8 @@ def sheet(ticker, sheet, annualy: bool = False, stateOfDate: bool = False):
 
     response = requests.request("GET", url, headers=headers, data=payload)
 
-    # with open("finIncStatement.json", "w") as twitter_data_file:
-    #     json.dump(json.loads(response.text), twitter_data_file, indent=4, sort_keys=True)
-
-    # print(json.dumps(json.loads(response.text)["rows"], indent=4, sort_keys=True))
 
     df_test = json.loads(response.text)
-    # pd.json_normalize(json.loads(response.text))
-    #print(df_test)
 
 
     return finStatementsDictToDf(df_test)

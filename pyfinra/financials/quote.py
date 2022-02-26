@@ -1,5 +1,5 @@
 import requests
-from .tools.get_acces import getTokens
+from .tools.get_access import getTokens
 from .tools.finraStockID import getFinraStockID
 
 def quote(ticker):

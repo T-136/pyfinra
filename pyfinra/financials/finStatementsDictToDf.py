@@ -14,7 +14,6 @@ def toDataframe(IncomeStatement):
         lableList.append(IncomeStatement["label"])
 
     for key in IncomeStatement.keys():
-        # print(key, IncomeStatement[key])
 
         if isinstance(IncomeStatement[key], dict):
             df_temp, lableListTemp = toDataframe(IncomeStatement[key])
