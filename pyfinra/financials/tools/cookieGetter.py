@@ -16,6 +16,5 @@ def get():
     session_cookies = a_session.cookies
     cookies_dictionary = session_cookies
 
-    print(cookies_dictionary)
     return cookies_dictionary
 

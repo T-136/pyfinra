@@ -1,11 +1,11 @@
 [tool.poetry]
 name = "pyfinra"
-version = "0.2.0"
+version = "0.2.1"
 description = "unofficial Finra api"
 authors = ["T-136"]
 readme = "README.md"
-homepage = "https://github.com/msw-projects/pyfinra"
-repository = "https://github.com/msw-projects/pyfinra"
+homepage = "https://github.com/T-136/pyfinra"
+repository = "https://github.com/T-136/pyfinra"
 
 [tool.poetry.dependencies]
 python = "^3.10"

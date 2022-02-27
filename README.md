@@ -1,6 +1,4 @@
-# Unoffical Python Finra Wrapper
-
-**warning: this repository is still in alpha stage**
+# Unoffical Python Finra Wrappe
 
 ## Installation
 
@@ -141,12 +139,4 @@ print(gme.financials_cash_flow())
 # Free cash flow                                      35263.0  21712.0  19001.0  16977.0  44163.0
 
 
-```
-
-## Testing
-
-Not implemented Yet!
-
-```Bash
-poetry run pytest
 ```
