@@ -1,12 +1,17 @@
 import requests
 import json
 from . import cookieGetter
-
+from tinydb import TinyDB, Query
 
 
 def getFinraStockID(ticker):
+  tickerDB = TinyDB('tickerDB.json')
 
   cookies = cookieGetter.get() 
+
+  if tickerDB.search(Query().ticker == ticker):
+    print("access db") 
+    return tickerDB.search(Query().ticker == ticker)[0]["FinraStockID"]
 
   s = requests.Session()
   s.cookies = cookies
@@ -19,5 +24,8 @@ def getFinraStockID(ticker):
       if symbol["AC001"] == ticker.upper():
           secId = symbol["SecId"]
           break
+  print("insert")
+  tickerDB.insert({"ticker":ticker, "FinraStockID":secId})
+
   return secId
 
