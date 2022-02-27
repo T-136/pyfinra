@@ -10,7 +10,7 @@ def getFinraStockID(ticker):
   cookies = cookieGetter.get() 
 
   if tickerDB.search(Query().ticker == ticker):
-    print("access db") 
+
     return tickerDB.search(Query().ticker == ticker)[0]["FinraStockID"]
 
   s = requests.Session()
@@ -24,7 +24,7 @@ def getFinraStockID(ticker):
       if symbol["AC001"] == ticker.upper():
           secId = symbol["SecId"]
           break
-  print("insert")
+
   tickerDB.insert({"ticker":ticker, "FinraStockID":secId})
 
   return secId
