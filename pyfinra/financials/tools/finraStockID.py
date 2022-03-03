@@ -2,10 +2,12 @@ import requests
 import json
 from . import cookieGetter
 from tinydb import TinyDB, Query
+import pathlib
 
 
 def getFinraStockID(ticker):
-  tickerDB = TinyDB('tickerDB.json')
+  file_path = pathlib.Path(__file__).parent.parent.parent.resolve()
+  tickerDB = TinyDB(f'{file_path}/tickerDB.json')
 
   cookies = cookieGetter.get() 
 

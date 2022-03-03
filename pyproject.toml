@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyfinra"
-version = "0.2.1"
+version = "0.2.2"
 description = "unofficial Finra api"
 authors = ["T-136"]
 readme = "README.md"

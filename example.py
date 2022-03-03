@@ -3,9 +3,9 @@ from pyfinra.ticker import Ticker
 
 aapl = Ticker("aapl")
 print(aapl.quote())
-print(aapl.financials_balancesheet())
-print(aapl.financials_inc_statement())
-print(aapl.financials_cash_flow())
+# print(aapl.financials_balancesheet())
+# print(aapl.financials_inc_statement())
+# print(aapl.financials_cash_flow())
 
 
 
