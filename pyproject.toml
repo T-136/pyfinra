@@ -11,6 +11,7 @@ repository = "https://github.com/T-136/pyfinra"
 python = "^3.10"
 pandas = "^1.4.1"
 requests = "^2.27.1"
+tinydb = "^4.7.0"
 
 [tool.poetry.dev-dependencies]
 
